@@ -6,12 +6,11 @@ import utils.FunctionUtil;
 
 public class Main {
 
-    public static double integrate(double a, double b, double eps, @NotNull IntegrationMethod integrationMethod){
+    public static double integrate(double a, double b, double eps, @NotNull IntegrationMethod integrationMethod) {
         double h = 0.5;
         double Icur = integrationMethod.integrate(a, b, h);
         double Ipre;
-        do
-        {
+        do {
             Ipre = Icur;
             h = h / 2;
             Icur = integrationMethod.integrate(a, b, h);
