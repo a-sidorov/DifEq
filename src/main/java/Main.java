@@ -21,7 +21,7 @@ public class Main {
     public static void main(String[] args) {
         double a = 0;
         double b = 3;
-        double eps = 0.01;
+        double eps = 1e-4;
 
         System.out.println("4x^3+2x-1");
         System.out.println("Interval [" + a + "; " + b + "]");
