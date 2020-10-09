@@ -26,10 +26,10 @@ public class Main {
 
         System.out.println("4x^3+2x-1");
         System.out.println("Interval [" + a + "; " + b + "]");
-        System.out.println("Значение интеграла для проверки " + (FunctionUtil.integratedFunction(b) - FunctionUtil.integratedFunction(a)));
-        System.out.println( "Точность " + eps );
+        System.out.println("Check value " + (FunctionUtil.integratedFunction(b) - FunctionUtil.integratedFunction(a)));
+        System.out.println("Accuracy " + eps);
 
-        System.out.println("Метод Симпсона " + integrate(a, b, eps, new SympsonMethod()) );
-        System.out.println("Метод трапеций " + integrate(a,b,eps, new TrapezeMethod()));
+        System.out.println("Sympson Method " + integrate(a, b, eps, new SympsonMethod()));
+        System.out.println("Trapeze Method " + integrate(a, b, eps, new TrapezeMethod()));
     }
 }
