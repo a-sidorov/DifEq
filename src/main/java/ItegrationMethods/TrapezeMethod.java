@@ -4,12 +4,17 @@ import utils.FunctionUtil;
 
 public class TrapezeMethod implements IntegrationMethod {
     @Override
-    public double integrate(double a, double b, double h) {
+    public double integrate(double a, double b, double n) {
         double res = 0;
-        for (double x = a + h; x < b; x += h) {
-            res += FunctionUtil.function(x);
+
+        double h = (b - a) / n;
+
+        for (int i = 0; i < n; i++) {
+            double x1 = a + i * h;
+            double x2 = a + (i + 1) * h;
+            res += 0.5 * (x2 - x1) * (FunctionUtil.function(x1) + FunctionUtil.function(x2));
         }
-        res = h * (res + (FunctionUtil.function(a) - FunctionUtil.function(b)) / 2);
+
         return res;
 
     }
